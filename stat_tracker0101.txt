@@ -1,0 +1,26 @@
+print("****Stats Tracker 3002****")
+
+#104 scheduled hours in DEC---no time off, 8 hour days
+sched_hours = 104
+#calls needed each hour to achieve stats
+objective = 2.50
+
+#call totals so far for Dec, 0 values are the days I do not work
+calls_per_day = [11,11,5,11,3,0,0,8,11,11,14,1,0,0,8,15,12]
+total_calls = sum(calls_per_day)
+
+attempts = [12,12,5,11,3,0,0,9,11,11,15,1,0,0,8,15,12]
+total_attempts = sum(attempts)
+
+bonus_time_back = (total_attempts + total_calls) / 60.00
+non_call_time_back = [2.417, 2.600, 4.850, 2.067, 7.25, 0, 0, 2.267, 2.467, 1.60, 2.23,7.133, 0,0, 4.53, 1.617,3.450,bonus_time_back]
+time_back_total = sum(non_call_time_back)
+
+
+prod_hrs = sched_hours - time_back_total
+
+adj_cpph = round(total_calls / prod_hrs,2)
+
+time_back_final = adj_cpph / objective
+
+
